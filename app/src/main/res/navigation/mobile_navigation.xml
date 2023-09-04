@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.advancedandroidspring2023.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.advancedandroidspring2023.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.advancedandroidspring2023.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/dataFragment"
+        android:name="com.example.advancedandroidspring2023.DataFragment"
+        android:label="fragment_data"
+        tools:layout="@layout/fragment_data" >
+        <action
+            android:id="@+id/action_dataFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.advancedandroidspring2023.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/ApiDetailFragment"
+        android:name="com.example.advancedandroidspring2023.apiDetailFragment"
+        android:label="fragment_api_detail"
+        tools:layout="@layout/fragment_api_detail" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/ApiFragment"
+        android:name="com.example.advancedandroidspring2023.apiFragment"
+        android:label="fragment_api"
+        tools:layout="@layout/fragment_api" >
+        <action
+            android:id="@+id/action_apiFragment_to_apiDetailFragment"
+            app:destination="@id/ApiDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recyclerAdapter"
+        android:name="com.example.advancedandroidspring2023.RecyclerAdapter"
+        android:label="fragment_recycler_adapter"
+        tools:layout="@layout/fragment_recycler_adapter" />
+    <fragment
+        android:id="@+id/recycleView"
+        android:name="com.example.advancedandroidspring2023.RecycleView"
+        android:label="fragment_recycle_view"
+        tools:layout="@layout/fragment_recycle_view" />
+    <fragment
+        android:id="@+id/feedbackReadFragment"
+        android:name="com.example.advancedandroidspring2023.FeedbackReadFragment"
+        android:label="fragment_feedback_read"
+        tools:layout="@layout/fragment_feedback_read" />
+    <fragment
+        android:id="@+id/feedbackSendFragment"
+        android:name="com.example.advancedandroidspring2023.FeedbackSendFragment"
+        android:label="fragment_feedback_send"
+        tools:layout="@layout/fragment_feedback_send" >
+        <action
+            android:id="@+id/action_feedbackSendFragment_to_feedbackReadFragment"
+            app:destination="@id/feedbackReadFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherStationFragment"
+        android:name="com.example.advancedandroidspring2023.WeatherStationFragment"
+        android:label="fragment_weather_station"
+        tools:layout="@layout/fragment_weather_station" />
+    <fragment
+        android:id="@+id/remoteMessageFragment"
+        android:name="com.example.advancedandroidspring2023.RemoteMessageFragment"
+        android:label="fragment_remote_message"
+        tools:layout="@layout/fragment_remote_message" />
+    <fragment
+        android:id="@+id/cloudMqttFragment"
+        android:name="com.example.advancedandroidspring2023.CloudMqttFragment"
+        android:label="fragment_cloud_mqtt"
+        tools:layout="@layout/fragment_cloud_mqtt" />
+</navigation>
